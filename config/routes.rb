@@ -3,8 +3,10 @@ Rails.application.routes.draw do
   resources :dispatches
   resources :drivers
   resources :vehicles
-  get 'sessions/new'
+  resources :microposts
   resources :users
+
+  get 'sessions/new'
   get 'users/new'
   root "static_pages#home"
   get '/help', to: 'static_pages#help'
@@ -17,5 +19,10 @@ Rails.application.routes.draw do
   post '/login', to: 'sessions#create'
   delete '/login', to: 'sessions#destroy'
 
-  resources :microposts
+  get "/reports", to: "reports#home"
+  get "/reports/vehicle-performance", to: "reports#vehicle_performance", as: "vehicle_performance"
+
+
+
+  
 end

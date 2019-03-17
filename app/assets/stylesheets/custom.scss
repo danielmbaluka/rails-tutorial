@@ -190,3 +190,16 @@ input {
     color: $state-danger-text;
   }
 }
+
+.no-padding {
+  padding: 0 !important;
+}
+
+.no-margin {
+  margin: 0 !important;
+}
+
+
+.align-right {
+  text-align: right;
+}

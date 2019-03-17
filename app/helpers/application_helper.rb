@@ -8,4 +8,8 @@ module ApplicationHelper
 			page_title + " | " + base_title
 		end
 	end
+
+	def number_to_local_currency(number, unit = "KES ")
+		number_to_currency number, {:unit => unit}
+	end
 end

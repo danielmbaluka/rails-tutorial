@@ -1,0 +1,31 @@
+<div class="row">
+	<div class="col-md-12">
+		<h3>Vehicle Performance Report</h3>
+		<hr>
+	</div>
+
+
+	<div class="col-md-12">
+		<table class="table table-stripped">
+			<thead>
+				<th>Vehicle</th>
+				<th class="align-right"># of Dispatches</th>
+				<th class="align-right">Gross Revenue</th>
+				<th class="align-right">Expenses</th>
+				<th class="align-right">Net Profit</th>
+			</thead>
+			<tbody>
+				<% @vehicles.each do |vehicle| %>
+					<tr>
+						<td> <%= vehicle.registration %> </td>
+						<td class="align-right"> <%= vehicle.dispatches.length %> </td>
+						<td class="align-right"> <%= number_to_local_currency vehicle.dispatches_revenue %> </td>
+						<td class="align-right"> <%= number_to_local_currency vehicle.expenses %> </td>
+						<td class="align-right"> <%= number_to_local_currency vehicle.net_profit %> </td>
+					</tr>
+				<% end %>
+			</tbody>
+		</table>
+	</div>
+
+</div>

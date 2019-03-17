@@ -33,6 +33,13 @@ gem 'jbuilder', '~> 2.5'
 # twitter bootstrap sass
 gem 'bootstrap-sass', '3.3.7'
 
+# bootstrap 4
+gem 'bootstrap', '~> 4.0.0'
+
+gem 'sprockets-rails', '~> 3.2.1'
+
+gem 'jquery-rails', '~> 4.3.3'
+
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.1.0', require: false
