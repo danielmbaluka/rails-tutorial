@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Vehicle:</strong>
+  <%= @dispatch.vehicle %>
+</p>
+
+<p>
+  <strong>Driver:</strong>
+  <%= @dispatch.driver %>
+</p>
+
+<p>
+  <strong>Dispatch date:</strong>
+  <%= @dispatch.dispatch_date %>
+</p>
+
+
+<p>
+  <strong>Amount:</strong>
+  <%= @dispatch.amount %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @dispatch.description %>
+</p>
+
+<p>
+  <strong>Status:</strong>
+  <%= @dispatch.status %>
+</p>
+
+<%= link_to 'Edit', edit_dispatch_path(@dispatch) %> |
+<%= link_to 'Back', dispatches_path %>

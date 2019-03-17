@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  vehicle: 1
+  driver: 1
+  dispatch_date: 2019-03-17
+  customer: MyString
+  amount: 1.5
+  description: MyText
+  status: MyString
+
+two:
+  vehicle: 1
+  driver: 1
+  dispatch_date: 2019-03-17
+  customer: MyString
+  amount: 1.5
+  description: MyText
+  status: MyString

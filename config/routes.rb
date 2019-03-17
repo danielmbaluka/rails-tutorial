@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :dispatches
   resources :drivers
   resources :vehicles
   get 'sessions/new'

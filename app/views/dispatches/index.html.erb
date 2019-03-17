@@ -1,0 +1,60 @@
+
+<div class="row">
+
+  <div class="col-md-12">
+    <h3>Dispatches</h3>
+    <hr>
+  </div>
+  
+  <div class="col-md-12">
+
+    <div class="row">
+      <div class="col-md-6">
+        <input type="" name="" placeholder="search dispatches" class="form-control" role="search">
+      </div>
+
+      <div class="col-md-6">
+        
+        <div class="pull-right">
+          <%= link_to 'New Dispatch', new_dispatch_path, class: "btn btn-success" %>
+        </div>
+
+      </div>
+    </div>
+    
+
+  </div>
+
+  <div class="col-md-12">
+      <table class="table table-stripped">
+        <thead>
+          <tr>
+            <th>Vehicle</th>
+            <th>Driver</th>
+            <th>Dispatch date</th>
+            <th>Amount</th>
+            <th>Description</th>
+            <th>Status</th>
+            <th colspan="2"></th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <% @dispatches.each do |dispatch| %>
+            <tr>
+              <td><%= dispatch.vehicle.registration %></td>
+              <td><%= dispatch.driver.name %></td>
+              <td><%= dispatch.dispatch_date %></td>
+              <td><%= dispatch.amount %></td>
+              <td><%= dispatch.description %></td>
+              <td><%= dispatch.status %></td>
+              <td><%= link_to 'Edit', edit_dispatch_path(dispatch), class: "btn btn-info btn-sm" %></td>
+              <td><%= link_to 'Delete', dispatch, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-sm btn-danger" %></td>
+            </tr>
+          <% end %>
+        </tbody>
+      </table>
+  </div>
+
+</div>
+

@@ -10,7 +10,19 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_03_17_054607) do
+ActiveRecord::Schema.define(version: 2019_03_17_141412) do
+
+  create_table "dispatches", force: :cascade do |t|
+    t.integer "vehicle_id"
+    t.integer "driver_id"
+    t.date "dispatch_date"
+    t.string "customer_id"
+    t.float "amount"
+    t.text "description"
+    t.string "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "drivers", force: :cascade do |t|
     t.string "name"

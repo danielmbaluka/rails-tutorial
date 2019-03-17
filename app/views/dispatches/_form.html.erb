@@ -1,0 +1,38 @@
+<%= form_with(model: dispatch, local: true) do |form| %>
+  <% if dispatch.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(dispatch.errors.count, "error") %> prohibited this dispatch from being saved:</h2>
+
+      <ul>
+      <% dispatch.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+    <%= form.label :vehicle %>
+    <%= form.select :vehicle_id, options_for_select(Vehicle.all.map { |vehicle| [vehicle.registration, vehicle.id] }, 
+        :selected => @dispatch.vehicle.nil? ? nil : @dispatch.vehicle.id), {}, class: "form-control" %>
+
+    <%= form.label :driver %>
+    <%= form.select :driver_id, options_for_select(Driver.all.map { |driver| [driver.name, driver.id] }, :selected => @dispatch.driver.nil? ? nil : @dispatch.driver.id), {}, { :class => 'form-control' } %>
+
+    <%= form.label :dispatch_date %>
+    <input type="date" name="dispatch[dispatch_date]" class="form-control" value="<%= @dispatch.dispatch_date %>">
+
+    <%= form.label :amount %>
+    <%= form.number_field :amount, class: "form-control" %>
+
+    <%= form.label :description %>
+    <%= form.text_area :description, class: "form-control" %>
+
+    <%= form.label :status %>
+    <%= form.text_field :status, class: "form-control" %>
+
+    <div class="actions">
+      <%= form.submit "Save", class: "btn btn-primary" %>
+    </div>
+
+    <%= link_to 'Cancel', dispatches_path, class: "btn btn-warning" %>
+<% end %>
