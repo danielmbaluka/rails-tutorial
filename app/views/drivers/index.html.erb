@@ -1,0 +1,66 @@
+<div class="row">
+
+  <div class="col-md-12">
+    <h3>Drivers</h3>
+    <hr>
+  </div>
+
+  <div class="col-md-12">
+    
+    <div class="col-md-6">
+      
+      <input type="" name="" placeholder="search drivers" class="form-control">
+
+    </div>
+
+    <div class="col-md-6">
+      
+      <di class="pull-right">
+        <%= link_to 'New Driver', new_driver_path, class: "btn btn-success" %>
+      </di>
+
+    </div>
+
+  </div>
+
+  <div class="col-md-12">
+    
+    <table class="table table-stripped">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Email</th>
+          <th>Phone number</th>
+          <th>Address</th>
+          <th>City</th>
+          <th>Country</th>
+          <th>DL number</th>
+          <th>Status</th>
+          <th colspan="3"></th>
+        </tr>
+      </thead>
+
+      <tbody>
+        <% @drivers.each do |driver| %>
+          <tr>
+            <td><%= driver.name %></td>
+            <td><%= driver.email %></td>
+            <td><%= driver.phone_number %></td>
+            <td><%= driver.address %></td>
+            <td><%= driver.city %></td>
+            <td><%= driver.country %></td>
+            <td><%= driver.dl_number %></td>
+            <td><%= driver.status %></td>
+            <td><%= link_to 'Edit', edit_driver_path(driver), class: "btn btn-info btn-sm" %></td>
+            <td><%= link_to 'Delete', driver, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+
+  </div>
+
+</div>
+
+
+
