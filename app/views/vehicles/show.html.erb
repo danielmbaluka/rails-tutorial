@@ -1,0 +1,43 @@
+<div class="row">
+	<div class="col-md-12">
+		
+	</div>
+
+	<div class="col-md-12">
+		<div class="col-md-6 col-md-offset-3">
+			<table class="table table-condensed">
+				<tbody>
+					<tr>
+						<td>Registration</td>
+						<td><%= @vehicle.registration %></td>
+					</tr>
+					<tr>
+						<td>Make</td>
+						<td><%= @vehicle.make %></td>
+					</tr>
+					<tr>
+						<td>Model</td>
+						<td><%= @vehicle.model %></td>
+					</tr>
+					<tr>
+						<td>YOM</td>
+						<td><%= @vehicle.yom %></td>
+					</tr>
+
+					<tr>
+						<td>Color</td>
+						<td><%= @vehicle.color %></td>
+					</tr>
+
+				</tbody>
+			</table>
+		</div>
+	</div>
+
+</div>
+<p id="notice"><%= notice %></p>
+
+
+
+<%= link_to 'Edit', edit_vehicle_path(@vehicle) %> |
+<%= link_to 'Back', vehicles_path %>
