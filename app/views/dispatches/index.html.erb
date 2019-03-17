@@ -31,6 +31,7 @@
           <tr>
             <th>Vehicle</th>
             <th>Driver</th>
+            <th>Customer</th>
             <th>Dispatch date</th>
             <th>Amount</th>
             <th>Description</th>
@@ -44,6 +45,7 @@
             <tr>
               <td><%= dispatch.vehicle.registration %></td>
               <td><%= dispatch.driver.name %></td>
+              <td><%= dispatch.customer.nil? ? nil : dispatch.customer.name %></td>
               <td><%= dispatch.dispatch_date %></td>
               <td><%= dispatch.amount %></td>
               <td><%= dispatch.description %></td>

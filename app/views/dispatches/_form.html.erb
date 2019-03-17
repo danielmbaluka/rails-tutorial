@@ -18,6 +18,9 @@
     <%= form.label :driver %>
     <%= form.select :driver_id, options_for_select(Driver.all.map { |driver| [driver.name, driver.id] }, :selected => @dispatch.driver.nil? ? nil : @dispatch.driver.id), {}, { :class => 'form-control' } %>
 
+    <%= form.label :customer %>
+    <%= form.select :customer_id, options_for_select(Customer.all.map { |customer| [customer.name, customer.id] }, :selected => @dispatch.customer.nil? ? nil : @dispatch.customer.id), {}, { :class => 'form-control' } %>
+
     <%= form.label :dispatch_date %>
     <input type="date" name="dispatch[dispatch_date]" class="form-control" value="<%= @dispatch.dispatch_date %>">
 
