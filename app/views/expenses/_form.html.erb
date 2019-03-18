@@ -18,15 +18,16 @@
         <input type="date" name="expense[date]" class="form-control" value="<%= @expense.date %>">
       </div>
 
-<!--       <div class="field">
+      <div class="field">
         <%= form.label :vendor_id %>
-        <%= form.number_field :vendor_id, class: "form-control" %>
+        <%= form.select :vendor_id, options_for_select(Vendor.all.map { |vendor| [vendor.name, vendor.id] }, 
+        :selected => @expense.vendor.nil? ? nil : @expense.vendor.id), {}, class: "form-control" %>
       </div>
 
       <div class="field">
         <%= form.label :category_id %>
         <%= form.number_field :category_id, class: "form-control" %>
-      </div> -->
+      </div>
 
       <div class="field">
         <%= form.label :vehicle_id %>

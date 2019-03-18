@@ -1,5 +1,6 @@
 class Expense < ApplicationRecord
 	belongs_to :vehicle
+	belongs_to :vendor
 	belongs_to :driver, optional: true
 
 	validates :date, presence: true

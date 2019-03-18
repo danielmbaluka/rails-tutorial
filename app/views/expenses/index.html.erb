@@ -28,9 +28,9 @@
             <th>Category</th>
             <th>Vehicle</th>
             <th>Driver</th>
-            <th>Amount</th>
+            <th class="align-right">Amount</th>
             <th>Description</th>
-            <th colspan="3"></th>
+            <th colspan="2">Actions</th>
           </tr>
         </thead>
 
@@ -38,14 +38,14 @@
           <% @expenses.each do |expense| %>
             <tr>
               <td><%= expense.date %></td>
-              <td><%= expense.vendor_id %></td>
+              <td><%= expense.vendor.nil? ? nil : expense.vendor.name %></td>
               <td><%= expense.category_id %></td>
               <td><%= expense.vehicle.nil? ? nil : expense.vehicle.registration %></td>
               <td><%= expense.driver.nil? ? nil : expense.driver.name %></td>
-              <td><%= expense.amount %></td>
+              <td class="align-right"><%= number_to_local_currency expense.amount %></td>
               <td><%= expense.description %></td>
               <td><%= link_to 'Edit', edit_expense_path(expense), class: "btn btn-info btn-sm" %></td>
-              <td><%= link_to 'Destroy', expense, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %></td>
+              <td><%= link_to 'Delete', expense, method: :delete, data: { confirm: 'Are you sure?' }, class: "btn btn-danger btn-sm" %></td>
             </tr>
           <% end %>
         </tbody>
