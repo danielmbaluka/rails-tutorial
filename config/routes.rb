@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :expense_categories
   resources :vendors
   resources :expenses
   resources :customers

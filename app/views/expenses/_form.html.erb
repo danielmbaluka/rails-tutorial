@@ -25,8 +25,9 @@
       </div>
 
       <div class="field">
-        <%= form.label :category_id %>
-        <%= form.number_field :category_id, class: "form-control" %>
+        <%= form.label :expense_category_id %>
+        <%= form.select :expense_category_id, options_for_select(ExpenseCategory.all.map { |category| [category.name, category.id] }, 
+        :selected => @expense.expense_category.nil? ? nil : @expense.expense_category.id), {}, class: "form-control" %>
       </div>
 
       <div class="field">

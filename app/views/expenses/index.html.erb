@@ -39,7 +39,7 @@
             <tr>
               <td><%= expense.date %></td>
               <td><%= expense.vendor.nil? ? nil : expense.vendor.name %></td>
-              <td><%= expense.category_id %></td>
+              <td><%= expense.expense_category.nil? ? nil : expense.expense_category.name %></td>
               <td><%= expense.vehicle.nil? ? nil : expense.vehicle.registration %></td>
               <td><%= expense.driver.nil? ? nil : expense.driver.name %></td>
               <td class="align-right"><%= number_to_local_currency expense.amount %></td>
