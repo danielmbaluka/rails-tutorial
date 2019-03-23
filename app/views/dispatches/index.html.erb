@@ -25,6 +25,7 @@
 
   </div>
 
+
   <div class="col-md-12">
       <table class="table table-stripped">
         <thead>
@@ -56,6 +57,13 @@
           <% end %>
         </tbody>
       </table>
+      
+  </div>
+
+  <div class="col-md-12 no-paddind">
+    <div class="pull-right">
+      <%= will_paginate @dispatches %>
+    </div>
   </div>
 
 </div>

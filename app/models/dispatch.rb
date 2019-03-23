@@ -7,4 +7,6 @@ class Dispatch < ApplicationRecord
 	validates :vehicle, presence: true
 	validates :driver, presence: true
 	validates :amount, presence: true
+
+	self.per_page = 10
 end

@@ -1,5 +1,6 @@
 class ExpensesController < ApplicationController
   before_action :set_expense, only: [:show, :edit, :update, :destroy]
+  before_action :ensure_user_is_logged_in, only: [:index, :show, :edit, :update, :destroy]
 
   # GET /expenses
   # GET /expenses.json
@@ -63,5 +64,12 @@ class ExpensesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def expense_params
       params.require(:expense).permit(:date, :vendor_id, :expense_category_id, :vehicle_id, :driver_id, :amount, :description)
+    end
+
+    def ensure_user_is_logged_in
+      unless logged_in?
+        flash[:danger] = "Please sign in"
+        redirect_to login_url
+      end
     end
 end

@@ -33,9 +33,6 @@ gem 'jbuilder', '~> 2.5'
 # twitter bootstrap sass
 gem 'bootstrap-sass', '3.3.7'
 
-# bootstrap 4
-gem 'bootstrap', '~> 4.0.0'
-
 gem 'sprockets-rails', '~> 3.2.1'
 
 gem 'jquery-rails', '~> 4.3.3'
@@ -46,6 +43,10 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 # encrypting user passwords
 gem 'bcrypt',         '3.1.12'
+
+gem 'will_paginate', '3.1.7'
+
+gem 'bootstrap-will_paginate', '1.0.0'
 
 group :development, :test do
   # Use sqlite3 as the database for Active Record

@@ -4,7 +4,7 @@ class DispatchesController < ApplicationController
   # GET /dispatches
   # GET /dispatches.json
   def index
-    @dispatches = Dispatch.all
+    @dispatches = Dispatch.paginate(page: params[:page])
   end
 
   # GET /dispatches/1
